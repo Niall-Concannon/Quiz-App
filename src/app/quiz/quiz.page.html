@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Quiz Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ul>
+    <li *ngFor="let x of myQuestions">
+      <h2>{{x.question}}</h2>
+      <p>{{x.A}}</p>
+      <p>{{x.B}}</p>
+      <p>{{x.C}}</p>
+      <p>{{x.D}}</p>
+      <p>{{x.answer}}</p>
+    </li>
+  </ul>
+</ion-content>
