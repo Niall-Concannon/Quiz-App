@@ -8,14 +8,14 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ul>
-    <li *ngFor="let x of myQuestions">
-      <h2>{{x.question}}</h2>
-      <p>{{x.A}}</p>
-      <p>{{x.B}}</p>
-      <p>{{x.C}}</p>
-      <p>{{x.D}}</p>
-      <p>{{x.answer}}</p>
-    </li>
-  </ul>
+  <!-- Only shows when myQuestions has been loaded -->
+  <div *ngIf="myQuestions[randomQ]">
+    <!-- Display the Question and choices -->  
+    <h2>{{myQuestions[randomQ].question}}</h2>
+      <ion-button (click)="checkAnswerA()">{{myQuestions[randomQ].A}}</ion-button>
+      <ion-button (click)="checkAnswerB()">{{myQuestions[randomQ].B}}</ion-button>
+      <ion-button (click)="checkAnswerC()">{{myQuestions[randomQ].C}}</ion-button>
+      <ion-button (click)="checkAnswerD()">{{myQuestions[randomQ].D}}</ion-button>
+      <p>{{myQuestions[randomQ].answer}}</p>
+  </div>
 </ion-content>
