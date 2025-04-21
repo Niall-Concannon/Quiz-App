@@ -1,26 +1,90 @@
-#container {
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 75%;
-  transform: translateY(-50%);
-}
-
-ion-header {
-  --background: transparent;
-}
-
-ion-toolbar {
-  --background: transparent;
-  color: white;
-}
-
+/* Fullscreen gradient background */
 ion-content {
   --background: linear-gradient(225deg, purple 30%, blue);
+  color: white;
+  padding: 0;
+  height: 100vh; /* Ensure full viewport height */
 }
 
+/* Flex container to center content */
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  outline: none;
+  border: none;
+}
+
+/* Main box with frosted-glass effect and white border */
+.start-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 3px solid white;
+  border-radius: 20px;
+  padding: 30px 20px;
+  backdrop-filter: blur(10px); /* Frosted-glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Soft outer glow */
+  width: 100%;
+  max-width: 800px;
+  min-height: 90vh; /* Tall box appearance across devices */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  outline: none !important;
+}
+
+/* Stylized gradient button with bold typography */
 ion-button {
   --color: white;
-  --background: linear-gradient(270deg,teal,red);
+  --background: linear-gradient(135deg, #3498db, #9b59b6); /* Blue → purple */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 2rem;
+  padding: 20px 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle elevation */
+  margin-top: 20px;
+  transition: transform 0.2s ease-in-out;
+  border-radius: 50px; /* Rounded pill shape */
+}
+
+ion-button:hover {
+  transform: scale(1.05); /* Slight pop on hover */
+  --background: linear-gradient(135deg, #3498db, #9b59b6); /* Reapply gradient */
+}
+
+ion-button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Mobile layout adjustments */
+@media (max-width: 600px) {
+  #container {
+    padding: 10px; /* Avoid edge-to-edge layout on small screens */
+  }
+
+  .start-box {
+    padding: 20px 15px;
+    max-height: 90vh; /* Maintain vertical presence on mobile */
+    margin: 0 auto;
+  }
+
+  ion-button {
+    font-size: 2.2rem; /* Slightly larger for thumb usability */
+    padding: 25px 50px;
+    width: 100%;
+  }
+}
+
+/* Desktop layout refinements */
+@media (min-width: 768px) {
+  .start-box {
+    min-height: 90vh; /* Maintain tall appearance */
+    min-width: 100vh;  /* Optional: force box to stretch more horizontally */
+  }
 }
