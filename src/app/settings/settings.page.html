@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Settings Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <!-- White border box -->
+    <div class="settings-box">
+      <h2>Game Settings</h2>
+
+      <!-- Time Limit -->
+      <div class="setting">
+        <ion-item lines="none">
+          <ion-label>Enable Time Limit</ion-label>
+          <ion-toggle [(ngModel)]="timerEnabled" color="primary"></ion-toggle>
+        </ion-item>
+      </div>
+
+      <!-- Notifications-->
+      <div class="setting">
+        <ion-item lines="none">
+          <ion-label>Enable Notifications</ion-label>
+          <ion-toggle [(ngModel)]="notificationsEnabled" color="primary"></ion-toggle>
+        </ion-item>
+      </div>
+
+      <!-- Save Button -->
+      <ion-button expand="full" color="primary">
+        Save Settings
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

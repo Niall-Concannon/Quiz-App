@@ -40,7 +40,7 @@ ion-content {
 }
 
 /* Stylized gradient button with bold typography */
-ion-button {
+.startBtn {
   --color: white;
   --background: linear-gradient(135deg, #3498db, #9b59b6); /* Blue → purple */
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -52,12 +52,12 @@ ion-button {
   border-radius: 50px; /* Rounded pill shape */
 }
 
-ion-button:hover {
+.startBtn:hover {
   transform: scale(1.05); /* Slight pop on hover */
   --background: linear-gradient(135deg, #3498db, #9b59b6); /* Reapply gradient */
 }
 
-ion-button:focus {
+.startBtn:focus {
   outline: none !important;
   box-shadow: none !important;
 }
@@ -74,7 +74,7 @@ ion-button:focus {
     margin: 0 auto;
   }
 
-  ion-button {
+  .startBtn {
     font-size: 2.2rem; /* Slightly larger for thumb usability */
     padding: 25px 50px;
     width: 100%;

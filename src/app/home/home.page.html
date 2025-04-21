@@ -3,6 +3,11 @@
     <ion-title>
       Home Page
     </ion-title>
+
+    <!-- Icon on top right of page -->
+    <ion-button [routerLink]="['/settings']" slot="end">
+      <ion-icon name="settings-sharp"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -10,7 +15,7 @@
   <div id="container">
     <!-- White border box -->
     <div class="start-box">
-      <ion-button size="large" shape="round" [routerLink]="['/quiz']">
+      <ion-button class="startBtn" size="large" shape="round" [routerLink]="['/quiz']">
         Start Game
       </ion-button>
     </div>

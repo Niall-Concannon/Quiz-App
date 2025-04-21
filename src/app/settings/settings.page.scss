@@ -1,0 +1,126 @@
+/* Fullscreen gradient background for the page */
+ion-content {
+    --background: linear-gradient(225deg, purple 30%, blue);
+    color: white;
+    padding: 0;
+    height: 100vh; /* Full viewport height for the background */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center all content in the middle */
+  }
+  
+  /* Main settings box with frosted-glass effect and a smooth border */
+  .settings-box {
+    background: rgba(255, 255, 255, 0.12); /* Subtle frosted effect */
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 40px 25px;
+    backdrop-filter: blur(12px); /* Stronger frosted-glass effect */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3); /* Soft outer glow for the box */
+    width: 100%;
+    max-width: 800px;
+    min-height: 85vh; /* Compact height to prevent it from being too tall */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin: 20px auto; /* Center box and add space around */
+  }
+  
+  /* Title styling: larger font for better readability */
+  .settings-box h2 {
+    font-family: 'Impact', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 30px; /* Space between the title and content */
+  }
+  
+  /* Individual setting element styling */
+  .setting {
+    margin-top: 30px; /* Increased spacing between elements */
+  }
+  
+  /* Stylistic buttons with gradient background */
+  ion-button {
+    --color: white;
+    --background: linear-gradient(135deg, #3498db, #9b59b6);
+    font-family: 'Impact', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.6rem;
+    width: 90%;
+    max-width: 400px;
+    padding: 18px 30px;
+    margin-top: 30px; /* Spacing between buttons */
+    border-radius: 50px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  /* Button hover effect to create a subtle scale and shadow */
+  ion-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+  }
+  
+  /* Focused button styling */
+  ion-button:focus {
+    outline: none !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5) !important; /* Focus shadow */
+  }
+  
+  /* Adjust ion-toggle appearance to match the frosted-glass style */
+  ion-toggle {
+    --background-checked: linear-gradient(135deg, #3498db, #9b59b6); /* Gradient for checked state */
+    --background-unchecked: rgba(255, 255, 255, 0.4); /* Subtle background when off */
+    --handle-background: rgba(255, 255, 255, 0.8); /* White handle */
+    --border-radius: 50px; /* Rounded edges */
+  }
+  
+  /* Style for ion-item to create space between the toggle and the text */
+  ion-item {
+    --background: rgba(255, 255, 255, 0.12); /* Frosted effect for item background */
+    --border-color: transparent; /* Remove default border */
+    padding: 12px; /* Adjust padding for compact design */
+    color: white; /* Ensure text is white */
+    display: flex;
+    align-items: center; /* Center toggle and text vertically */
+    justify-content: flex-start; /* Align text to the left */
+  }
+  
+  /* Add margin between the text and toggle */
+  ion-item ion-label {
+    margin-right: 15px; /* Space between the label and toggle */
+  }
+  
+  /* Hover effect for ion-item to highlight when interacted with */
+  ion-item:hover {
+    --background: rgba(255, 255, 255, 0.2); /* Lighter background on hover */
+  }
+  
+  /* Mobile layout adjustments for smaller screens */
+  @media (max-width: 600px) {
+    #container {
+      padding: 10px; /* Avoid edge-to-edge layout on mobile */
+    }
+  
+    .settings-box {
+      padding: 25px 15px;
+      max-height: 90vh; /* Maintain vertical presence on mobile */
+      margin: 0 auto;
+    }
+  
+    .settings-box h2 {
+      font-size: 2rem; /* Adjust font size for mobile */
+      margin-bottom: 20px;
+    }
+  
+    ion-button {
+      font-size: 1.4rem; /* Adjust button font size */
+      padding: 15px 25px;
+      width: 100%;
+      margin-top: 20px; /* Adjust spacing */
+    }
+  }
+  

@@ -4,6 +4,11 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Quiz Page</ion-title>
+
+    <!-- Icon on top right of page -->
+    <ion-button [routerLink]="['/settings']" slot="end">
+      <ion-icon name="settings-sharp"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -13,14 +18,14 @@
     <!-- Display the Question and choices -->  
     <h2>{{myQuestions[randomQ].question}}</h2>
     
-      <!-- Wrap buttons in grid container -->
+      <!-- 2x2 Grid -->
       <div class="answer-grid">
-        <ion-button [color]="btnA" [disabled]="disableA" (click)="checkAnswerA()">{{myQuestions[randomQ].A}}</ion-button>
-        <ion-button [color]="btnB" [disabled]="disableB" (click)="checkAnswerB()">{{myQuestions[randomQ].B}}</ion-button>
-        <ion-button [color]="btnC" [disabled]="disableC" (click)="checkAnswerC()">{{myQuestions[randomQ].C}}</ion-button>
-        <ion-button [color]="btnD" [disabled]="disableD" (click)="checkAnswerD()">{{myQuestions[randomQ].D}}</ion-button>
+        <ion-button class="answerBtn" [color]="btnA" [disabled]="disableA" (click)="checkAnswerA()">{{myQuestions[randomQ].A}}</ion-button>
+        <ion-button class="answerBtn" [color]="btnB" [disabled]="disableB" (click)="checkAnswerB()">{{myQuestions[randomQ].B}}</ion-button>
+        <ion-button class="answerBtn" [color]="btnC" [disabled]="disableC" (click)="checkAnswerC()">{{myQuestions[randomQ].C}}</ion-button>
+        <ion-button class="answerBtn" [color]="btnD" [disabled]="disableD" (click)="checkAnswerD()">{{myQuestions[randomQ].D}}</ion-button>
       </div>
       
-      <p>{{myQuestions[randomQ].answer}}</p>
+      <p>Answer: {{myQuestions[randomQ].answer}}</p>
   </div>
 </ion-content>

@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonBackButton, IonButtons, IonButton, IonAlert } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonBackButton, IonButtons, IonButton, IonIcon } from '@ionic/angular/standalone';
 import { QuestionsService } from '../services/questions.service';
+// import below for icons to work
+import { addIcons } from 'ionicons';
+import { settingsSharp } from 'ionicons/icons';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.page.html',
   styleUrls: ['./quiz.page.scss'],
   standalone: true,
-  imports: [IonButton, IonButtons, IonBackButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [RouterLink, IonIcon, IonButton, IonButtons, IonBackButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class QuizPage implements OnInit {
 
@@ -26,7 +30,8 @@ export class QuizPage implements OnInit {
   disableC:boolean = false;
   disableD:boolean = false;
 
-  constructor(private questionService:QuestionsService) { }
+  // Add specific icons to constructor
+  constructor(private questionService:QuestionsService) { addIcons({settingsSharp}); }
 
   ngOnInit():void {
     this.questionService.getQuestionsData().subscribe(

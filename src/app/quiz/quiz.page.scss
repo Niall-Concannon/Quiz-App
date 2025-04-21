@@ -50,7 +50,7 @@
 }
 
 /* Button style */
-ion-button {
+.answerBtn {
     --color: white;
     --background: linear-gradient(135deg, #3498db, #9b59b6); /* Gradient button color */
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -63,11 +63,11 @@ ion-button {
     transition: transform 0.2s ease-in-out; /* Hover effect transition */
 }
 
-ion-button:hover {
+.answerBtn:hover {
     transform: scale(1.05); /* Scale button on hover */
 }
 
-ion-button:disabled {
+.answerBtn:disabled {
     opacity: 0.6; /* Reduced opacity when button is disabled */
 }
 
@@ -98,7 +98,7 @@ ion-button:disabled {
         padding: 12px 16px;
     }
 
-    ion-button {
+    .answerBtn {
         font-size: 1.2rem;
         padding: 20px;
         width: 100%;
@@ -128,7 +128,7 @@ ion-button:disabled {
         justify-content: center; /* Vertically center content */
     }
 
-    ion-button {
+    .answerBtn {
         width: 100%; /* Ensure buttons stretch across full width */
     }
 }
