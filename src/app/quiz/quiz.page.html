@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -7,15 +7,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="quiz-content">
   <!-- Only shows when myQuestions has been loaded -->
   <div *ngIf="myQuestions[randomQ]">
     <!-- Display the Question and choices -->  
     <h2>{{myQuestions[randomQ].question}}</h2>
-      <ion-button (click)="checkAnswerA()">{{myQuestions[randomQ].A}}</ion-button>
-      <ion-button (click)="checkAnswerB()">{{myQuestions[randomQ].B}}</ion-button>
-      <ion-button (click)="checkAnswerC()">{{myQuestions[randomQ].C}}</ion-button>
-      <ion-button (click)="checkAnswerD()">{{myQuestions[randomQ].D}}</ion-button>
+      <ion-button [color]="btnA" [disabled]="disableA" (click)="checkAnswerA()">{{myQuestions[randomQ].A}}</ion-button>
+      <ion-button [color]="btnB" [disabled]="disableB" (click)="checkAnswerB()">{{myQuestions[randomQ].B}}</ion-button>
+      <ion-button [color]="btnC" [disabled]="disableC" (click)="checkAnswerC()">{{myQuestions[randomQ].C}}</ion-button>
+      <ion-button [color]="btnD" [disabled]="disableD" (click)="checkAnswerD()">{{myQuestions[randomQ].D}}</ion-button>
       <p>{{myQuestions[randomQ].answer}}</p>
   </div>
 </ion-content>

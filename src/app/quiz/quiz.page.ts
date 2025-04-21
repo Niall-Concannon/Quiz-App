@@ -17,6 +17,14 @@ export class QuizPage implements OnInit {
   randomQ:number = 0;
   choice:any = '';
   answer:any = '';
+  btnA:string = "primary";
+  btnB:string = "primary";
+  btnC:string = "primary";
+  btnD:string = "primary";
+  disableA:boolean = false;
+  disableB:boolean = false;
+  disableC:boolean = false;
+  disableD:boolean = false;
 
   constructor(private questionService:QuestionsService) { }
 
@@ -35,14 +43,53 @@ export class QuizPage implements OnInit {
     this.answer = this.myQuestions[this.randomQ].answer;
 
     if(this.choice == this.answer) {
+      // Change colours of buttons
+      this.btnA = "success";
+      this.btnB = "danger";
+      this.btnC = "danger";
+      this.btnD = "danger";
       window.alert("Correct");
     } else {
+      
+      if('B' == this.myQuestions[this.randomQ].answer) {
+        this.btnA = "danger";
+        this.btnB = "success";
+        this.btnC = "danger";
+        this.btnD = "danger";
+      }
+      else if ('C' == this.myQuestions[this.randomQ].answer) {
+        this.btnA = "danger";
+        this.btnB = "danger";
+        this.btnC = "success";
+        this.btnD = "danger";
+      } else {
+        this.btnA = "danger";
+        this.btnB = "danger";
+        this.btnC = "danger";
+        this.btnD = "success";
+      }
+
       window.alert("Incorrect");
     }
+
+    // Stop clicking
+    this.disableA = true;
+    this.disableB = true;
+    this.disableC = true;
+    this.disableD = true;
     
-    
-    
-    this.randomQ = Math.floor(Math.random() * this.myQuestions.length);
+    // Add delay to show right and wrong answers
+    setTimeout(() => {
+      this.btnA = "primary";
+      this.btnB = "primary";
+      this.btnC = "primary";
+      this.btnD = "primary";
+      this.disableA = false;
+      this.disableB = false;
+      this.disableC = false;
+      this.disableD = false;
+      this.randomQ = Math.floor(Math.random() * this.myQuestions.length);
+    }, 2000);
   }
 
   checkAnswerB() {
@@ -50,14 +97,50 @@ export class QuizPage implements OnInit {
     this.answer = this.myQuestions[this.randomQ].answer;
 
     if(this.choice == this.answer) {
+      this.btnA = "danger";
+      this.btnB = "success";
+      this.btnC = "danger";
+      this.btnD = "danger";
       window.alert("Correct");
     } else {
+
+      if('B' == this.myQuestions[this.randomQ].answer) {
+        this.btnA = "danger";
+        this.btnB = "success";
+        this.btnC = "danger";
+        this.btnD = "danger";
+      }
+      else if ('C' == this.myQuestions[this.randomQ].answer) {
+        this.btnA = "danger";
+        this.btnB = "danger";
+        this.btnC = "success";
+        this.btnD = "danger";
+      } else {
+        this.btnA = "danger";
+        this.btnB = "danger";
+        this.btnC = "danger";
+        this.btnD = "success";
+      }
       window.alert("Incorrect");
     }
     
+    this.disableA = true;
+    this.disableB = true;
+    this.disableC = true;
+    this.disableD = true;
     
-    
-    this.randomQ = Math.floor(Math.random() * this.myQuestions.length);
+    // Add delay to show right and wrong answers
+    setTimeout(() => {
+      this.btnA = "primary";
+      this.btnB = "primary";
+      this.btnC = "primary";
+      this.btnD = "primary";
+      this.disableA = false;
+      this.disableB = false;
+      this.disableC = false;
+      this.disableD = false;
+      this.randomQ = Math.floor(Math.random() * this.myQuestions.length);
+    }, 2000);
   }
 
   checkAnswerC() {
@@ -65,14 +148,50 @@ export class QuizPage implements OnInit {
     this.answer = this.myQuestions[this.randomQ].answer;
 
     if(this.choice == this.answer) {
+      this.btnA = "danger";
+      this.btnB = "danger";
+      this.btnC = "success";
+      this.btnD = "danger";
       window.alert("Correct");
     } else {
+
+      if('B' == this.myQuestions[this.randomQ].answer) {
+        this.btnA = "danger";
+        this.btnB = "success";
+        this.btnC = "danger";
+        this.btnD = "danger";
+      }
+      else if ('C' == this.myQuestions[this.randomQ].answer) {
+        this.btnA = "danger";
+        this.btnB = "danger";
+        this.btnC = "success";
+        this.btnD = "danger";
+      } else {
+        this.btnA = "danger";
+        this.btnB = "danger";
+        this.btnC = "danger";
+        this.btnD = "success";
+      }
       window.alert("Incorrect");
     }
     
+    this.disableA = true;
+    this.disableB = true;
+    this.disableC = true;
+    this.disableD = true;
     
-    
-    this.randomQ = Math.floor(Math.random() * this.myQuestions.length);
+    // Add delay to show right and wrong answers
+    setTimeout(() => {
+      this.btnA = "primary";
+      this.btnB = "primary";
+      this.btnC = "primary";
+      this.btnD = "primary";
+      this.disableA = false;
+      this.disableB = false;
+      this.disableC = false;
+      this.disableD = false;
+      this.randomQ = Math.floor(Math.random() * this.myQuestions.length);
+    }, 2000);
   }
 
   checkAnswerD() {
@@ -80,14 +199,50 @@ export class QuizPage implements OnInit {
     this.answer = this.myQuestions[this.randomQ].answer;
 
     if(this.choice == this.answer) {
+      this.btnA = "danger";
+      this.btnB = "danger";
+      this.btnC = "danger";
+      this.btnD = "success";
       window.alert("Correct");
     } else {
+
+      if('B' == this.myQuestions[this.randomQ].answer) {
+        this.btnA = "danger";
+        this.btnB = "success";
+        this.btnC = "danger";
+        this.btnD = "danger";
+      }
+      else if ('C' == this.myQuestions[this.randomQ].answer) {
+        this.btnA = "danger";
+        this.btnB = "danger";
+        this.btnC = "success";
+        this.btnD = "danger";
+      } else {
+        this.btnA = "danger";
+        this.btnB = "danger";
+        this.btnC = "danger";
+        this.btnD = "success";
+      }
       window.alert("Incorrect");
     }
+
+    this.disableA = true;
+    this.disableB = true;
+    this.disableC = true;
+    this.disableD = true;
     
-    
-    
-    this.randomQ = Math.floor(Math.random() * this.myQuestions.length);
+    // Add delay to show right and wrong answers
+    setTimeout(() => {
+      this.btnA = "primary";
+      this.btnB = "primary";
+      this.btnC = "primary";
+      this.btnD = "primary";
+      this.disableA = false;
+      this.disableB = false;
+      this.disableC = false;
+      this.disableD = false;
+      this.randomQ = Math.floor(Math.random() * this.myQuestions.length);
+    }, 2000);
   }
 
 }
