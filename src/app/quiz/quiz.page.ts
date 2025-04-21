@@ -104,9 +104,9 @@ export class QuizPage implements OnInit {
       window.alert("Correct");
     } else {
 
-      if('B' == this.myQuestions[this.randomQ].answer) {
-        this.btnA = "danger";
-        this.btnB = "success";
+      if('A' == this.myQuestions[this.randomQ].answer) {
+        this.btnA = "success";
+        this.btnB = "danger";
         this.btnC = "danger";
         this.btnD = "danger";
       }
@@ -155,16 +155,16 @@ export class QuizPage implements OnInit {
       window.alert("Correct");
     } else {
 
-      if('B' == this.myQuestions[this.randomQ].answer) {
-        this.btnA = "danger";
-        this.btnB = "success";
+      if('A' == this.myQuestions[this.randomQ].answer) {
+        this.btnA = "success";
+        this.btnB = "danger";
         this.btnC = "danger";
         this.btnD = "danger";
       }
-      else if ('C' == this.myQuestions[this.randomQ].answer) {
+      else if ('B' == this.myQuestions[this.randomQ].answer) {
         this.btnA = "danger";
-        this.btnB = "danger";
-        this.btnC = "success";
+        this.btnB = "success";
+        this.btnC = "danger";
         this.btnD = "danger";
       } else {
         this.btnA = "danger";
@@ -206,22 +206,22 @@ export class QuizPage implements OnInit {
       window.alert("Correct");
     } else {
 
-      if('B' == this.myQuestions[this.randomQ].answer) {
+      if('A' == this.myQuestions[this.randomQ].answer) {
+        this.btnA = "success";
+        this.btnB = "danger";
+        this.btnC = "danger";
+        this.btnD = "danger";
+      }
+      else if ('B' == this.myQuestions[this.randomQ].answer) {
         this.btnA = "danger";
         this.btnB = "success";
         this.btnC = "danger";
         this.btnD = "danger";
-      }
-      else if ('C' == this.myQuestions[this.randomQ].answer) {
+      } else {
         this.btnA = "danger";
         this.btnB = "danger";
         this.btnC = "success";
         this.btnD = "danger";
-      } else {
-        this.btnA = "danger";
-        this.btnB = "danger";
-        this.btnC = "danger";
-        this.btnD = "success";
       }
       window.alert("Incorrect");
     }
