@@ -15,6 +15,10 @@
 <ion-content [fullscreen]="true" class="quiz-content">
   <!-- Only shows when myQuestions has been loaded -->
   <div class="quiz-box" *ngIf="myQuestions[randomQ]">
+
+    <!-- Displays the time limit -->
+    <h2 *ngIf="timerEnabled">Time left: {{ timeLimit }}s</h2>
+
     <!-- Display the Question and choices -->  
     <h2>{{myQuestions[randomQ].question}}</h2>
     
