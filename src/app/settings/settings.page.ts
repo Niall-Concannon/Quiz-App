@@ -14,7 +14,6 @@ import { Storage } from '@ionic/storage-angular'
 export class SettingsPage {
 
   timerEnabled: boolean = false;
-  notificationsEnabled: boolean = false;
 
   constructor(private storage:Storage) { }
 
@@ -26,10 +25,6 @@ export class SettingsPage {
 
   toggleTimer() {
     this.timerEnabled = !this.timerEnabled;
-  }
-
-  toggleNotifications() {
-    this.notificationsEnabled = !this.notificationsEnabled;
   }
 
   async saveSettings() {

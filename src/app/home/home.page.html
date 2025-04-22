@@ -18,6 +18,11 @@
       <ion-button class="startBtn" size="large" shape="round" [routerLink]="['/quiz']">
         Start Game
       </ion-button>
+
+      <!-- Browser button - Tried to do toast, notifications and status bar and none seemed to work -->
+      <ion-button class="startBtn" (click)="openWebsite()" expand="full">
+        Open Moodle Page
+      </ion-button>
     </div>
   </div>
 </ion-content>
