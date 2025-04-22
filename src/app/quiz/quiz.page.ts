@@ -33,6 +33,8 @@ export class QuizPage implements OnInit {
   timerEnabled = false;
   timeLimit = 10;
   timer: any;
+  score: number = 0;
+  playerName: string = '';
 
   // Add specific icons to constructor
   constructor(private questionService:QuestionsService, private storage:Storage) { addIcons({settingsSharp}); }
@@ -57,12 +59,36 @@ export class QuizPage implements OnInit {
   async ionViewWillEnter() {
     await this.storage.create();
     this.timerEnabled = await this.storage.get('timerEnabled');
+    this.playerName = await this.storage.get('playerName');
 
     if (this.timerEnabled) {
       this.startTimer();
     }
   }
 
+  async updateLeaderboard() {
+    // Get the current leaderboard or use an empty array if not found
+    let leaderboard = await this.storage.get('leaderboard') || [];
+  
+    let found = false;
+  
+    // Check if the player already exists
+    for (let i = 0; i < leaderboard.length; i++) {
+      if (leaderboard[i][0] === this.playerName) {
+        leaderboard[i][1] = this.score;  // Update the score
+        found = true;
+        break;
+      }
+    }
+  
+    // New Player
+    if (!found) {
+      leaderboard.push([this.playerName, this.score]);
+    }
+  
+    await this.storage.set('leaderboard', leaderboard);
+  }
+  
   startTimer() {
     this.timeLimit = 10;
   
@@ -133,6 +159,9 @@ export class QuizPage implements OnInit {
       this.btnB = "danger";
       this.btnC = "danger";
       this.btnD = "danger";
+      this.score++;
+      this.updateLeaderboard();
+
       alert("Correct");
     } else {
       
@@ -192,6 +221,8 @@ export class QuizPage implements OnInit {
       this.btnB = "success";
       this.btnC = "danger";
       this.btnD = "danger";
+      this.score++;
+      this.updateLeaderboard();
       alert("Correct");
     } else {
 
@@ -249,6 +280,8 @@ export class QuizPage implements OnInit {
       this.btnB = "danger";
       this.btnC = "success";
       this.btnD = "danger";
+      this.score++;
+      this.updateLeaderboard();
       alert("Correct");
     } else {
 
@@ -306,6 +339,8 @@ export class QuizPage implements OnInit {
       this.btnB = "danger";
       this.btnC = "danger";
       this.btnD = "success";
+      this.score++;
+      this.updateLeaderboard();
       alert("Correct");
     } else {
 

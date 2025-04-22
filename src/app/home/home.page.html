@@ -15,6 +15,13 @@
   <div id="container">
     <!-- White border box -->
     <div class="start-box">
+      <!-- Input for player name -->
+    <ion-item class="input-item">
+      <ion-label position="floating">Your Name</ion-label>
+      <ion-input [(ngModel)]="playerName" placeholder="Enter your name" clearInput></ion-input>
+    </ion-item>
+      
+      <ion-button class="saveBtn" expand="block" (click)="saveName()">Save Name</ion-button>
       <ion-button class="startBtn" size="large" shape="round" [routerLink]="['/quiz']">
         Start Game
       </ion-button>

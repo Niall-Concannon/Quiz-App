@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Leaderboard Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <div class="leaderboard-box">
+      <div class="leaderboard-list">  
+        <div *ngFor="let entry of leaderboardData; let i = index" class="leaderboard-entry">
+          <div class="rank">#{{ i + 1 }}</div>
+          <div class="name">{{ entry[0] }}</div> <!-- Display Player Name -->
+          <div class="score">Score: {{ entry[1] }}</div> <!-- Display Player Score -->
+        </div>
+      </div>
+  
+      <!-- Clear Leaderboard Button -->
+      <div class="clear-leaderboard-button">
+        <ion-button expand="full" (click)="clearLeaderboard()">Clear Leaderboard</ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

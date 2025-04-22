@@ -132,3 +132,54 @@
         width: 100%; /* Ensure buttons stretch across full width */
     }
 }
+
+
+/* Leaderboard Button Styling */
+.leaderboard-btn {
+    --background: linear-gradient(135deg, #3498db, #9b59b6); /* Gradient background */
+    --color: white;
+    --border-radius: 30px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.4rem;
+    padding: 16px 24px; /* Button padding */
+    width: 90%; /* Button width is 90% of the container */
+    max-width: 400px; /* Max width for the button */
+    border-radius: 50px; /* Rounded corners */
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Shadow for button */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Hover transition */
+    backdrop-filter: blur(5px); /* Frosted-glass effect */
+    -webkit-backdrop-filter: blur(5px); /* Safari support */
+    border: none; /* Remove border for consistency */
+    display: block;
+    margin-top: 30px;
+    align-self: center; /* Center align the button */
+    text-align: center; /* Center the text */
+}
+
+/* Hover effect for the leaderboard button */
+.leaderboard-btn:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    --background: linear-gradient(135deg, #9b59b6, #3498db); /* Reverse gradient on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+/* Mobile layout adjustments for leaderboard button */
+@media (max-width: 600px) {
+    .leaderboard-btn {
+        font-size: 1.2rem; /* Slightly smaller text on mobile */
+        padding: 14px 20px;
+        margin-top: 20px;
+    }
+}
+
+/* Desktop layout adjustments */
+@media (min-width: 601px) {
+    .leaderboard-btn {
+        max-width: 300px; /* Limit max width for larger screens */
+        padding: 16px 24px;
+        font-size: 1.4rem;
+        margin-top: 30px;
+    }
+}

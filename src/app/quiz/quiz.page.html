@@ -30,6 +30,6 @@
         <ion-button class="answerBtn" [color]="btnD" [disabled]="disableD" (click)="checkAnswerD()">{{myQuestions[randomQ].D}}</ion-button>
       </div>
       
-      <p>Answer: {{myQuestions[randomQ].answer}}</p>
+      <ion-button class="leaderboard-btn" [routerLink]="['/leaderboard']"> View Leaderboard</ion-button>
   </div>
 </ion-content>
